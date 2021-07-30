@@ -4,39 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
-<body onload="getdataapi2()">
-    <div id="output"></div>
-</body>
+<body>
+    <img class="avatar" />
+    <h3 class="fullname"></h3>
+    <p class="email"></p>
 
-<script>
-
-    function getdataapi1() {
-        axios.get("https://reqres.in/api/users/5").then(res => {        
-            console.log(`res`,res.data.data)
-            document.getElementById('output').innerHTML = `<img src="${res.data.data.avatar}">
-            <h1>${res.data.data.first_name} 
-                ${res.data.data.last_name}</h1>
-            <p>${res.data.data.email}</p>`
-     }).catch(err => {
-         console.log(`err` , err)
-     })   
-    }
-
-    async function getdataapi2() {
-        try {
-            let ress = await axios.get("https://reqres.in/api/users/5");
-            document.getElementById('output').innerHTML = `<img src="${ress.data.data.avatar}">
-            <h1>${ress.data.data.first_name} 
-                ${ress.data.data.last_name}</h1>
-            <p>${ress.data.data.email}</p>`
-        } catch (err) {
-            console.log('error :>> ', err)
-        }
-    }
-
-
-</script>
+    <script src="script.js"></script>
+</body>    
 </html>
